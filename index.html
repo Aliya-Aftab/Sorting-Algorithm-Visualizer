@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sorting Algorithm Visualizer</h2>
+        <div class="legend">
+            <div><span class="color-box green"></span> Sorted</div>
+            <div><span class="color-box red"></span> Comparing Elements</div>
+            <div><span class="color-box blue"></span>Unsorted</div>
+        </div>
+        
+        <p id="error-message" style="color:red;"></p>
+
+        <div class="speed-control">
+            <label for="speed">Speed: </label>
+            <input type="range" id="speed" min="1" max="1000" value="500">
+        </div>
+        
+        <div class="controls">
+            <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+            <button onclick="generateBars()">Generate Bars</button>
+        </div>
+
+        <div class="sorting-options">
+            <label>Select Algorithm:</label>
+            <select id="algorithm">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+            </select>
+            <button onclick="startSorting()">Start</button>
+            <button onclick="stopSorting()">Stop</button>
+        </div>
+
+        <div id="barsContainer"></div>
+        <p id="statusMessage"></p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
