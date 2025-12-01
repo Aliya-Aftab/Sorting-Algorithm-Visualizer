@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,6 +40,110 @@
 
         <div id="barsContainer"></div>
         <p id="statusMessage"></p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoMaster | Interactive Learning Engine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <div id="toast" class="toast hidden">Notification</div>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fas fa-brain"></i> Algo<span>Master</span>
+            </div>
+
+            <div class="control-group">
+                <label>Algorithm</label>
+                <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                    <option value="heap">Heap Sort</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Input Data (Max 40)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="customInput" placeholder="10, 50, 25...">
+                    <button id="loadBtn" class="btn-icon"><i class="fas fa-check"></i></button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <button id="randomBtn" class="btn secondary"><i class="fas fa-random"></i> Generate Random</button>
+            </div>
+
+            <div class="control-group">
+                <label>Speed</label>
+                <input type="range" id="speed" min="1" max="100" value="30">
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="actions">
+                <button id="startBtn" class="btn primary"><i class="fas fa-play"></i> Start</button>
+                <button id="pauseBtn" class="btn warning" disabled><i class="fas fa-pause"></i> Pause</button>
+                <button id="resetBtn" class="btn danger" disabled><i class="fas fa-stop"></i> Reset</button>
+            </div>
+        </aside>
+
+        <main class="stage">
+            
+            <header class="stats-header">
+                <div class="stat-group">
+                    <span class="label">Comparisons</span>
+                    <span class="value" id="compCount">0</span>
+                </div>
+                <div class="stat-group">
+                    <span class="label">Swaps</span>
+                    <span class="value" id="swapCount">0</span>
+                </div>
+                <div class="stat-group" style="flex:2">
+                    <span class="label">Live Action Log</span>
+                    <span class="value action-log" id="actionLog">Ready to sort...</span>
+                </div>
+            </header>
+
+            <div id="barsContainer" class="visualizer-container"></div>
+
+            <section class="info-panel">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('concept')">Concept & Legend</button>
+                    <button class="tab-btn" onclick="switchTab('code')">Source Code</button>
+                </div>
+
+                <div id="concept" class="tab-content active">
+                    <div class="concept-card">
+                        <h3 id="algoTitle">Algorithm Title</h3>
+                        <p id="algoDesc">Description...</p>
+                    </div>
+                    <div class="legend-card">
+                        <h3>Color Legend</h3>
+                        <div id="legendContainer" class="legend-grid"></div>
+                    </div>
+                </div>
+
+                <div id="code" class="tab-content">
+                    <pre><code id="algoCode">// Code will load here...</code></pre>
+                </div>
+            </section>
+
+        </main>
     </div>
 
     <script src="scripts.js"></script>
